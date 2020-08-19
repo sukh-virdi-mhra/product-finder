@@ -1,0 +1,34 @@
+{
+  "name": "product_finder",
+  "version": "1.0.0",
+  "description": "An app to find products",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npm run watch & nodemon out/index.js",
+    "start": "node out/index.js",
+    "test": "jest",
+    "watch": "tsc --watch"
+  },
+  "author": "apprentices",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "jest": "^26.3.0",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

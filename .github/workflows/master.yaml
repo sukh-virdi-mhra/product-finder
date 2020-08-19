@@ -1,0 +1,25 @@
+name: master-build
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build-and-test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v2
+
+      - name: Install
+        working-directory: .
+        run: |
+          npm install
+
+      - name: test
+        working-directory: .
+        run: |
+          npm test
