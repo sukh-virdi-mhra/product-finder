@@ -4,13 +4,12 @@
   "description": "An app to find products",
   "main": "src/index.js",
   "scripts": {
-    "copy-html": "copyfiles -f \"src/views/*.html\" out/views",
+    "copy-html": "copyfiles -f \"src/views/*.pug\" out/views",
     "build": "tsc",
     "dev": "npm run copy-html && npm run watch & nodemon out/app-server.js",
     "start": "node out/index.js",
     "test": "jest",
     "watch": "tsc --watch"
-
   },
   "author": "apprentices",
   "license": "ISC",
@@ -34,6 +33,7 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
   }
 }
