@@ -4,11 +4,13 @@
   "description": "An app to find products",
   "main": "src/index.js",
   "scripts": {
+    "copy-html": "copyfiles -f \"src/views/*.html\" out/views",
     "build": "tsc",
-    "dev": "npm run watch & nodemon out/index.js",
+    "dev": "npm run copy-html && npm run watch & nodemon out/app-server.js",
     "start": "node out/index.js",
     "test": "jest",
     "watch": "tsc --watch"
+
   },
   "author": "apprentices",
   "license": "ISC",
@@ -30,5 +32,8 @@
       "tsx",
       "js"
     ]
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
