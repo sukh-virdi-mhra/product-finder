@@ -1,28 +1,39 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 
 import ProductFinder from "./services/finder"
 import getData from "./repositories/data-provider"
 let productFinder = new ProductFinder(getData);
 
+app.use(express.urlencoded({
+  extended: true,
+  })
+)
+
 app.use(express.static("public"))
 
-const getHandler = (request, response) => {
-  console.log("I'm listening!")
-  response.render("index", {title: "pug", message: "pug message"})
-}
+app.get("/", (request, response) => {
+  response.render("index")
+})
 
-app.get("/", getHandler)
+app.get("/file", (request, response) => {
+  response.render("index", {
+    title: "Pug",
+    message: "pug message",
+  })
+})
 
 app.get("/rereouted", (request, response) => {
     response.send("You have been rerouted!")
 })
 
-app.get("/search/:products", (request, response) => {
-    let searchedProduct = productFinder.getProduct(request.params.products);
+  app.post("/search", (request, response) => {
+    let searchedProduct = productFinder.getProduct(request.body.product.toUpperCase());
     if (searchedProduct) {
-      response.send(searchedProduct);
+      response.render("description",{    
+        title: "Product Description",
+        item: searchedProduct});
     } else {
       response.send("Product Not Found");
     }

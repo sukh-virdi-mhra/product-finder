@@ -3,7 +3,6 @@ export default class Product {
   name: string
   dose: string
   substance: string
-
   url: string
 
   constructor(

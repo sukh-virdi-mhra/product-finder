@@ -1,5 +1,11 @@
 html 
   head 
-    title= title
+    link(rel="stylesheet" type="text/css" href= "/styles/style.css")
   body
-    h1= message
+    h1
+      | Product Finder
+    form(action='/search', method='POST')
+      label(for="product")
+        | Search for Product: 
+      input(type="text", id="product", name="product")
+      input(type="submit", value="Submit")

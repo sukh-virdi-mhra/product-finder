@@ -1,0 +1,10 @@
+html 
+  head 
+      link(rel="stylesheet" type="text/css" href= "/styles/style.css")
+  body
+    h1
+      | Product Description
+    p(class="description") #{item.name} #{item.dose}
+    p(class="description") #{item.substance}
+    a(href=item.url)
+      | Link
