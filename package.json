@@ -7,12 +7,11 @@
     "copy-views": "copyfiles -f \"src/views/*.pug\" out/views",
     "copy-styles": "copyfiles -f \"src/styles/*.css\" public/styles",
     "build": "tsc",
-    "dev": "npm run copy-styles && npm run copy-views && npm run watch & nodemon out/app-server.js",
-    "start": "node out/index.js",
+    "dev": "npm run copy-styles && npm run copy-views && start npm run watch && nodemon out/app-server.js",
     "test": "jest",
     "watch": "tsc --watch"
   },
-  "author": "apprentices",
+  "author": "sukhvirdi7",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.9",

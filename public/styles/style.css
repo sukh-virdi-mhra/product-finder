@@ -2,5 +2,37 @@ body {
     background-color: rgb(255, 255, 255);
     font-family: "Arial";
     color: rgb(33, 13, 150);
+    font-size: 18px;
     text-align: center;
+    background-repeat: no-repeat;
+    background-image: url("https://www.pngkey.com/png/full/498-4986716_mhra-confirmed-to-present-at-ends-this-june.png");
+    background-position-y: 60%
+}
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    font-family: "Arial";
+    font-size: 18px;
+    text-align: center
+}
+
+.textbox {
+    text-align: center;
+    font-size: 18px;
+    padding: 10 30;
+    border-radius: 25px;
+}
+
+.description {
+    color: rgb(0, 0, 0)
+}
+
+h1 {
+    font-size: 48
+}
+
+.button {
+    padding: 10 30;
+    font-size: 18px;
+    border-radius: 25px;
 }

@@ -3,8 +3,12 @@ html
       link(rel="stylesheet" type="text/css" href= "/styles/style.css")
   body
     h1
+      | Product Finder
+    h2
       | Product Description
-    p(class="description") #{item.name} #{item.dose}
-    p(class="description") #{item.substance}
-    a(href=item.url)
-      | Link
+    p(class="description") PL Number: #{item.plNumber} 
+    p(class="description") Product Name: #{item.name} 
+    p(class="description") Dose: #{item.dose}
+    p(class="description") Substance: #{item.substance}
+    a(href=item.url) Package Leaflet: 
+      | Information for User
