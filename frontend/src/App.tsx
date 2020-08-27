@@ -1,21 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-interface HeaderProps {
-  name: string
-  age: number
-}
-
-function Header(props: HeaderProps) {
-  return <h1>Hello {props.name}. You are {props.age}!</h1> 
-}
+import Header from "./components/Header/index"
+import ProductSearch from "./components/ProductSearch/index"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Header name="Harry" age = {20}/>
+        <Header name="Harry" age = {20}>
+          Product Finder
+        </Header>
+        <ProductSearch/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -30,7 +26,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
