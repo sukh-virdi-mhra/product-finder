@@ -24,12 +24,13 @@ app.get("/file", (request, response) => {
   })
 })
 
-app.get("/rereouted", (request, response) => {
-    response.send("You have been rerouted!")
-})
+app.get("/hello", (request: Request, response: Response) => {
+  response.setHeader("Content-Type", "application/json");
+  response.send({"Hello there": "This is a test"});
+});
 
-  app.post("/search", (request, response) => {
-    let searchedProduct = productFinder.getProduct(request.body.product.toUpperCase());
+app.post("/search", (request, response) => {
+  let searchedProduct = productFinder.getProduct(request.body.product.toUpperCase());
     if (searchedProduct) {
       response.render("description",{    
         title: "Product Description",
@@ -37,7 +38,7 @@ app.get("/rereouted", (request, response) => {
     } else {
       response.send("Product Not Found");
     }
-  });
+});
 
 app.set("view engine", "pug")
 app.set("views", "./out/views");
