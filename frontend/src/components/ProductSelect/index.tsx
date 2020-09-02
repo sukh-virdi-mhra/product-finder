@@ -2,7 +2,7 @@ import React, { useState, FormEvent } from "react";
 
 interface IProductSelectProps {
   name: string
-  onSubmit: (food: string) => void
+  onSubmit: (product: string) => void
 }
 
 export default function ProductSearch(props: IProductSelectProps) {
