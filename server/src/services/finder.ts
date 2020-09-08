@@ -1,13 +1,24 @@
-import Product from "../models/product"
+import Product from "../models/product";
+import models from "../models";
+
 export default class ProductFinder {
-  dataSource: () => Object
+  menu: typeof models.Product[];
 
-  constructor(dataSource) {
-    this.dataSource = dataSource
-  }
+  // dataSource: () => Object
 
-  getProduct(product: string): Product {
-    let productObjects = this.dataSource()
-    return productObjects[product]
+  // constructor(dataSource) {
+  //   this.dataSource = dataSource
+  // }
+
+  // getProduct(product: string): Product {
+  //   let productObjects = this.dataSource()
+  //   return productObjects[product]
+  // }
+
+  constructor() {
+    models.Product.find({}, (err, productItems) => {
+      console.log(productItems);
+      this.menu = productItems;
+    });
   }
 }

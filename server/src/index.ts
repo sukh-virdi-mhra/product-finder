@@ -1,10 +1,10 @@
-import ProductFinder from "./services/finder"
-import getInput from "./app"
-import getData from "./repositories/data-provider"
+// import ProductFinder from "./services/finder";
+// import { getInput, inputHandler } from "./app";
+// import getData from "./repositories/data-provider";
+// import Product from "./models/product";
 
-function startUp(): void {
-  let finder = new ProductFinder(getData)
-  getInput(finder)
-}
-
-startUp()
+// export default function search(product): Product {
+//   let finder = new ProductFinder(getData);
+//   return inputHandler(product, finder);
+// }
+console.log("running");

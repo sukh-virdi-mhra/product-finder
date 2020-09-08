@@ -1,26 +1,27 @@
-import readline = require("readline")
-import ProductFinder from "./services/finder"
+// import readline = require("readline");
+// import ProductFinder from "./services/finder";
+// import Product from "./models/product";
 
-let rl = readline.createInterface(process.stdin, process.stdout)
+// let rl = readline.createInterface(process.stdin, process.stdout);
 
-function inputHandler(answer: string, finder: ProductFinder): void {
-  if (answer === "Q") {
-    rl.close()
-    return null
-  }
+// export function inputHandler(answer: string, finder: ProductFinder): Product {
+//   if (answer === "Q") {
+//     rl.close();
+//     return null;
+//   }
 
-  let result = finder.getProduct(answer)
-  if (result) {
-    console.log(result.toString())
-  } else {
-    console.log("Product doesn't exist", answer)
-  }
+//   let result = finder.getProduct(answer);
+//   if (result) {
+//     return result;
+//   } else {
+//     return null;
+//   }
 
-  getInput(finder)
-}
+//   getInput(finder);
+// }
 
-export default function getInput(finder: ProductFinder): void {
-  rl.question("Input your medical licence number or Q to quit: ", (answer) =>
-    inputHandler(answer, finder)
-  )
-}
+// export function getInput(finder: ProductFinder): void {
+//   rl.question("Input your medical licence number or Q to quit: ", (answer) =>
+//     inputHandler(answer, finder)
+//   );
+// }

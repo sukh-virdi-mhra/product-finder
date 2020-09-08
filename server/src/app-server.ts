@@ -1,48 +1,55 @@
-const express = require('express')
-const app = express()
-const port = 4000
+import express, { Request, Response } from "express";
+import mongoose from "mongoose";
+import Finder from "./services/finder";
+import getData from "./repositories/data-provider";
+import models, { connectDb } from "./models";
 
-import ProductFinder from "./services/finder"
-import getData from "./repositories/data-provider"
-let productFinder = new ProductFinder(getData);
+const schema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-app.use(express.urlencoded({
-  extended: true,
+const app = express();
+const port = 4000;
+
+app.use(
+  express.urlencoded({
+    extended: true,
   })
-)
+);
+let finder;
 
-app.use(express.static("public"))
-
-app.get("/", (request, response) => {
-  response.render("index")
-})
-
-app.get("/file", (request, response) => {
-  response.render("index", {
-    title: "Pug",
-    message: "pug message",
-  })
-})
-
-app.get("/hello", (request: Request, response: Response) => {
-  response.setHeader("Content-Type", "application/json");
-  response.send({"Hello there": "This is a test"});
+app.get("/", (req: Request, res: Response) => {
+  res.render("index");
 });
 
-app.post("/search", (request, response) => {
-  let searchedProduct = productFinder.getProduct(request.body.product.toUpperCase());
-    if (searchedProduct) {
-      response.render("description",{    
-        title: "Product Description",
-        item: searchedProduct});
-    } else {
-      response.send("Product Not Found");
-    }
-});
+// app.post("/product", (req: Request, res: Response) => {
+//   let product = search(req.body.plNumber);
+//   if (product) {
+//     res.render("product", {
+//       product: product,
+//     });
+//   } else {
+//     res.send("The product you are looking for was not found");
+//   }
+// });
 
-app.set("view engine", "pug")
+app.set("title", "Product Finder");
+app.set("view engine", "pug");
 app.set("views", "./out/views");
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.use(express.static("public"));
+
+connectDb().then(async () => {
+  finder = new Finder();
+
+  app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+  });
+});
