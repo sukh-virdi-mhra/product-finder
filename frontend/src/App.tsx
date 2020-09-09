@@ -1,30 +1,20 @@
 import React, { useState, useEffect } from "react"
 import "./App.css"
 import ProductSelect from "./components/ProductSelect/index"
+import IProduct from "./models/product"
 
 function App() {
-  let [basket, setBasket] = useState<string[]>([])
+  // let [basket, setBasket] = useState<string[]>([])
+  let [menu, setMenu] = useState<IProduct[]>([])  
 
-  const updateBasket = (product: string) => {
-    basket.push(product)
-    setBasket(basket)
-  }
 
   useEffect(() => {
-    fetch("/hello")
+    fetch("/menu")
       .then((response) => response.json())
-      .then((response) => console.log(response))
-  })
+      .then((response) => setMenu(response))
+  }, [])
 
-  return (
-    <div className="App">
-      <ProductSelect name="Ibugel gel" onSubmit={updateBasket} />
-      <ProductSelect name="Anadin Extra" onSubmit={updateBasket} />
-      <ProductSelect name="Tadalafil" onSubmit={updateBasket} />
-      <ProductSelect name="Nabilone" onSubmit={updateBasket} />
-      <ProductSelect name="Ramipril" onSubmit={updateBasket} />
-    </div>
-  )
+  return <div className="App"></div>
 }
 
 export default App

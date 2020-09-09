@@ -1,37 +1,14 @@
 import mongoose from "mongoose";
 
-// export default class Product {
-//   plNumber: string
-//   name: string
-//   dose: string
-//   substance: string
+// TODO: work out best way to have methods on these models
 
-//   url: string
-
-//   constructor(
-//     plNumber: string,
-//     name: string,
-//     dose: string,
-//     substance: string,
-//     url: string
-//   ) {
-//     this.plNumber = plNumber
-//     this.name = name
-//     this.dose = dose
-//     this.substance = substance
-//     this.url = url
-//   }
-
-//   toString(): string {
-//     return `
-//     PL Number: ${this.plNumber}
-//     Name: ${this.name}
-//     Dose: ${this.dose}
-//     Substance: ${this.substance}
-//     URL: ${this.url}
-//     `
-//   }
-// }
+export interface IProduct extends Document {
+  plNumber: String
+  name: String
+  dose: String
+  substance: String
+  url: String
+}
 
 const productSchema = new mongoose.Schema(
   {
@@ -64,6 +41,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model<IProduct>("Product", productSchema)
 
 export default Product;
