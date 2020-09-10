@@ -30,6 +30,10 @@ app.get("/menu", (req, res) => {
   res.send(finder.menu)
 })
 
+app.post("/order", (req, res) => {
+  console.log("Received")
+})
+
 // app.post("/product", (req: Request, res: Response) => {
 //   let product = search(req.body.plNumber);
 //   if (product) {
