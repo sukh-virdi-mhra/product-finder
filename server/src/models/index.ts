@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import Order from "./order";
 import Product from "./product";
 
 const connectDb = () => {
@@ -9,7 +9,7 @@ const connectDb = () => {
   });
 };
 
-const models = { Product };
+const models = { Product, Order };
 
 export { connectDb };
 

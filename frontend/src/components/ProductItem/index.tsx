@@ -23,12 +23,13 @@ const ProductItem: React.FC<IProductItem> = (props) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer my-token',
-            'My-Custom-Header': 'foobar'
         },
-        body: JSON.stringify({ title: 'React POST Request Example' })
+        body: JSON.stringify({ 
+          plNumber: 'PL001730050',
+          customerId: "76c35fd5-bd9e-4838-a1a2-624aeeec34a0",
+        }),
     };
-    fetch("/order", { method: "POST" })
+    fetch("/order", requestOptions)
   }
 
   return (
