@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem renders mount 1`] = `
+<ProductItem
+  item={
+    Object {
+      "dose": "10mg",
+      "name": "Ibugel gel",
+      "plNumber": "PL001730050",
+      "substance": "Ibuprofen",
+      "url": "https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca",
+    }
+  }
+>
+  <styled.div>
+    <div
+      className="sc-AxjAm klYsxZ"
+    >
+      <p>
+        PL001730050
+      </p>
+      <p>
+        Ibugel gel
+      </p>
+      <p>
+        10mg
+      </p>
+      <p>
+        Ibuprofen
+      </p>
+      <p>
+        https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca
+      </p>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Order
+      </button>
+    </div>
+  </styled.div>
+</ProductItem>
+`;
+
+exports[`ProductItem renders shallow 1`] = `
+<styled.div>
+  <p>
+    PL001730050
+  </p>
+  <p>
+    Ibugel gel
+  </p>
+  <p>
+    10mg
+  </p>
+  <p>
+    Ibuprofen
+  </p>
+  <p>
+    https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca
+  </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Order
+  </button>
+</styled.div>
+`;

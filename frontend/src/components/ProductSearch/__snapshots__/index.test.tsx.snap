@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductSearch renders mount 1`] = `
+<ProductSearch>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Search For Product:
+        <input
+          id="product"
+          name="product"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+      <input
+        type="submit"
+        value="Submit"
+      />
+    </form>
+    <div>
+      <h2>
+        Searched products
+      </h2>
+    </div>
+  </div>
+</ProductSearch>
+`;
+
+exports[`ProductSearch renders shallow 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Search For Product:
+      <input
+        id="product"
+        name="product"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+  <div>
+    <h2>
+      Searched products
+    </h2>
+  </div>
+</div>
+`;
