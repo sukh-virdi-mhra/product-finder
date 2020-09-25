@@ -1,0 +1,18 @@
+[
+    {
+      "_id": "5f5630c40a2778656321f3e8",
+      "plNumber": "PL001730050",
+      "name": "Ibugel gel",
+      "dose": "10mg",
+      "substance": "Ibuprofen",
+      "url": "https://mhraproductsproduction.blob.core.windows.net/docs/54454db7a69e9153ab7302232cdb8ee9230579ca"
+    },
+    {
+     "_id": "5f5630c40a2778656321f3e8",
+     "plNumber": "PL001655013",
+     "name": "Anadin Extra",
+     "dose": "5mg",
+     "substance": "Paracetamol",
+     "url": "https://mhraproductsproduction.blob.core.windows.net/docs/10c02830183326751553be62be5e2564fb47e970"
+      }
+  ]
