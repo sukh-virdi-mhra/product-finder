@@ -6,13 +6,7 @@ const StyledH1 = styled.h1`
   font-size: 80px;
 `
 
-interface IHeaderProps {
-  name: string
-  age: number
-  children: React.ReactNode
-}
-
-export default function Header(props: IHeaderProps) {
-  return <StyledH1>{props.children}</StyledH1> 
+export default function Header() {
+  return <StyledH1>Product Finder</StyledH1> 
   
 }
